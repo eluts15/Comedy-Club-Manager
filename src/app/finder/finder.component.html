@@ -1,8 +1,8 @@
-<h2>Comedian Finder</h2>
+<h2 style="font-style:italic">Comedian Finder</h2>
 
 <div *ngFor="let comedian of comedians | async" class="panel panel-default">
   <div class="panel-body">
-  <h3 (click)="goToComedianPage(comedian)"><em>{{comedian.name}}</em></h3>
+  <h3 style="font-weight:bold" (click)="goToComedianPage(comedian)"><em>{{comedian.name}}</em></h3>
   <div *ngIf="currentRoute === '/admin'">
      {{comedian.description}}
      <hr>

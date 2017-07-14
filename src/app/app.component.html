@@ -4,15 +4,16 @@
       <a class="navbar-brand" routerLink="">Home</a>
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li><a routerLink="about">About</a></li>
-      <li><a routerLink="finder">Find a Comedian</a></li>
+      <li><a class="important" routerLink="about">About</a></li>
+      <li><a class="important" routerLink="finder">Find a Comedian</a></li>
+      <li><a class="important" routerLink="admin">Admin</a></li>
     </ul>
   </div>
 </nav>
 
 
-<div style="text-align:center" class="containter">
-  <h1>
+<div style="text-align:center " class="containter">
+  <h1 style="font-weight:bold">
     {{title}}
   </h1>
   <router-outlet></router-outlet>
@@ -20,7 +21,5 @@
 
 
 <footer class="footer">
-  <div class="container" >
-    <a class="text-muted" routerLink="admin">Admin</a>
-  </div>
+  <div class="container"></div>
 </footer>
