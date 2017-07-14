@@ -55,3 +55,6 @@ Session.vim
 *~
 # Auto-generated tag files
 tags
+
+#Firebase credentials
+/src/app/api-keys.ts 
