@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { ComedianService } from '../comedian.service';
 
 @Component({
@@ -7,13 +7,11 @@ import { ComedianService } from '../comedian.service';
   styleUrls: ['./edit-comedian.component.css'],
   providers: [ComedianService]
 })
-export class EditComedianComponent implements OnInit {
+export class EditComedianComponent {
   @Input() selectedComedian;
 
   constructor(private comedianService: ComedianService) { }
 
-  ngOnInit() {
-  }
 
   beginUpdatingComedian(comedianToUpdate) {
     this.comedianService.updateComedian(comedianToUpdate);
