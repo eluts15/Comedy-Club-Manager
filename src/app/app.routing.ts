@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { FinderComponent } from './finder/finder.component';
+import { ComedianDetailComponent } from './comedian-detail/comedian-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -18,7 +19,12 @@ const appRoutes: Routes = [
   {
     path: 'finder',
     component: FinderComponent
-  }
+  },
+
+  {
+    path: 'comedians/:id',
+    component: ComedianDetailComponent
+  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
