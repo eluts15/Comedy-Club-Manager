@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Comedian } from '../comedian.model';
 import { Router } from '@angular/router';
+import { ComedianService } from '../comedian.service';
+
 
 @Component({
   selector: 'app-finder',
   templateUrl: './finder.component.html',
-  styleUrls: ['./finder.component.css']
+  styleUrls: ['./finder.component.css'],
+  providers: [ComedianService]
 })
-export class FinderComponent {
+export class FinderComponent implements OnInit{
+  comedians: Comedian[];
 
-  constructor(private router: Router) {}
-  comedians: Comedian[] = [
-     new Comedian("Popular Comedians", "Kevin Hart", "Makes people laugh severely.", 1),
-     new Comedian("Podcasting Elite", "Joe Rogan", "Makes people question life... and makes people laugh.", 2),
-     new Comedian("Series Regulars", "T.J. Miller", "Makes people laugh a lot", 3),
-     new Comedian("Stand-Up Legends", "Chris Rock", "Is a legend.", 4),
-     new Comedian("Stand-Up Legends", "Dave Chappelle", "Is a legend.", 5)
-  ];
+  constructor(private router: Router, private comedianService: ComedianService) {}
+
+  ngOnInit() {
+    this.comedians = this.comedianService.getComedians();
+  }
+
 
   goToComedianPage(clickedComedian: Comedian) {
     this.router.navigate(['comedians', clickedComedian.id]);
