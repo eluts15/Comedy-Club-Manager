@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Comedian } from '../comedian.model';
 import { ComedianService } from '../comedian.service';
+import { FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-comedian-detail',
@@ -11,8 +12,8 @@ import { ComedianService } from '../comedian.service';
   providers: [ComedianService]
 })
 export class ComedianDetailComponent implements OnInit {
-  comedianId: number;
-  comedianToDisplay: Comedian;
+  comedianId: string;
+  comedianToDisplay;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +23,7 @@ export class ComedianDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.comedianId = parseInt(urlParameters['id']);
+      this.comedianId = urlParameters['id'];
     });
     this.comedianToDisplay = this.comedianService.getComedianById(this.comedianId);
   }

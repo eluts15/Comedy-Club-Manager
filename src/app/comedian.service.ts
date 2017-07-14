@@ -1,22 +1,37 @@
 import { Injectable } from '@angular/core';
 import { Comedian } from './comedian.model';
-import { COMEDIANS } from './sample-data';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class ComedianService {
+  comedians: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private database: AngularFireDatabase) {
+    this.comedians = database.list('comedians');
+  }
 
   getComedians() {
-    return COMEDIANS;
+    return this.comedians;
   }
 
-  getComedianById(comedianId: number) {
-    for (var i = 0; i <= COMEDIANS.length - 1; i++) {
-      if (COMEDIANS[i].id === comedianId) {
-        return COMEDIANS[i];
-      }
-    }
+  addComedian(newComedian: Comedian) {
+    this.comedians.push(newComedian);
   }
+
+  getComedianById(comedianId: string) {
+    return this.database.object('comedians/' + comedianId);
+  }
+
+  updateComedian(localUpdatedComedian) {
+      var comedianEntryInFirebase = this.getComedianById(localUpdatedComedian.$key);
+      comedianEntryInFirebase.update({title: localUpdatedComedian.title,
+                                   artist: localUpdatedComedian.artist,
+                                   description: localUpdatedComedian.description});
+ }
+
+ deleteComedian(localComedianToDelete) {
+      var comedianEntryInFirebase = this.getComedianById(localComedianToDelete.$key);
+      comedianEntryInFirebase.remove();
+    }
 
 }

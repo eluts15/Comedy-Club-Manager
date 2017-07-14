@@ -1,5 +1,5 @@
 <div>
-  <h3>{{comedianToDisplay.title}}</h3>
-  <h3>{{comedianToDisplay.name}}</h3>
-  <p>{{comedianToDisplay.description}}</p>
+  <h3>{{(comedianToDisplay | async)?.title}}</h3>
+  <h3>{{(comedianToDisplay | async)?.name}}</h3>
+  <p>{{(comedianToDisplay | async)?.description}}</p>
 </div>

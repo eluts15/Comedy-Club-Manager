@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Comedian } from '../comedian.model';
 import { Router } from '@angular/router';
+import { Comedian } from '../comedian.model';
 import { ComedianService } from '../comedian.service';
-
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-finder',
@@ -11,16 +11,17 @@ import { ComedianService } from '../comedian.service';
   providers: [ComedianService]
 })
 export class FinderComponent implements OnInit{
-  comedians: Comedian[];
+  comedians: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
-  constructor(private router: Router, private comedianService: ComedianService) {}
+  constructor(private router: Router, private comedianService: ComedianService) { }
 
   ngOnInit() {
     this.comedians = this.comedianService.getComedians();
   }
 
 
-  goToComedianPage(clickedComedian: Comedian) {
-    this.router.navigate(['comedians', clickedComedian.id]);
+  goToComedianPage(clickedComedian) {
+    this.router.navigate(['comedians', clickedComedian.$key]);
   };
 }

@@ -1,0 +1,27 @@
+{ "comedians": [{
+    "title": "Popular Comedians",
+    "name": "Kevin Hart",
+    "description": "Makes people laugh severely.",
+    "id": "1"
+  }, {
+    "title": "Podcasting Elite",
+    "name": "Joe Rogan",
+    "description": "Makes people question the world we live in... And makes people laugh a lot.",
+    "id": "2"
+    }, {
+    "title": "Series Regulars",
+    "name": "T.J. Miller",
+    "description": "Makes peole laugh a lot... The guy from Silicon Valley!",
+    "id": "3"
+    }, {
+    "title": "Stand-Up Legends",
+    "name": "Chris Rock",
+    "description": "Is a legend.",
+    "id": "4"
+    }, {
+    "title": "Stand-Up Legends",
+    "name": "Dave Chappelle",
+    "description": "Is a legend according to funny people and non-funny people.",
+    "id": "5"
+    }]
+}

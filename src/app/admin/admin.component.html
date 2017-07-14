@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add Comedian</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <div>
+        <label>Title:</label>
+        <br>
+        <input #newTitle>
+      </div>
+
+      <div>
+        <label>Name:</label>
+        <br>
+        <input #newName>
+      </div>
+
+      <div>
+        <label>Description:</label>
+        <br>
+        <textarea #newDescription></textarea>
+      </div>
+    </div>
+    <button (click)="submitForm(newTitle.value, newArtist.value, newDescription.value); newTitle.value=''; newName.value=''; newDescription.value=''">Add</button>
+  </div>
+</div>
+
+
+<div>
+  <app-finder></app-finder>
+</div>

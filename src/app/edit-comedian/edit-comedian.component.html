@@ -1,0 +1,15 @@
+<h4>Edit Comedian Info</h4>
+
+<label>Title:</label>
+<input [(ngModel)]="selectedComedian.title" placeholder="Title">
+<br>
+
+<label>Name:</label>
+<input [(ngModel)]="selectedComedian.name" placeholder="Name">
+<br>
+
+<label>New Description:</label>
+<input [(ngModel)]="selectedComedian.description" placeholder="Bio">
+
+<button (click)="beginUpdatingComedian(selectedComedian)">Update</button>
+<button (click)="beginDeletingComedian(selectedComedian)">Delete</button>

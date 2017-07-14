@@ -11,6 +11,8 @@ import { ComedianDetailComponent } from './comedian-detail/comedian-detail.compo
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AdminComponent } from './admin/admin.component';
+import { EditComedianComponent } from './edit-comedian/edit-comedian.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -25,7 +27,9 @@ export const firebaseConfig = {
     WelcomeComponent,
     AboutComponent,
     FinderComponent,
-    ComedianDetailComponent
+    ComedianDetailComponent,
+    AdminComponent,
+    EditComedianComponent,
   ],
   imports: [
     BrowserModule,
