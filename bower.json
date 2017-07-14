@@ -1,0 +1,20 @@
+{
+  "name": "comedyclub",
+  "description": "a comedy club app",
+  "main": "",
+  "authors": [
+    "eluts <eluts15@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
