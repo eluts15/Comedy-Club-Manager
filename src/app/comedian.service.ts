@@ -25,7 +25,7 @@ export class ComedianService {
   updateComedian(localUpdatedComedian) {
       var comedianEntryInFirebase = this.getComedianById(localUpdatedComedian.$key);
       comedianEntryInFirebase.update({title: localUpdatedComedian.title,
-                                   artist: localUpdatedComedian.name,
+                                   name: localUpdatedComedian.name,
                                    description: localUpdatedComedian.description});
  }
 
