@@ -1,21 +1,8 @@
 # ComedyClub
 
-## User Stories
-
-As a user, I'd like to visit a page to see a list of all team or club members.
-As a user, I'd like to click a team or club member's entry in the list to visit their profile page, which should include more details about them.
-As a user, I'd like the option to visit an "About" page that explains what the club is, and what they do.
-As a user, I'd like all data persisted in a database, so it's always there when I need it.
-As a user, I'd like to filter the list of users by their particular role in the group, or some other information/category. (For instance, a club may have a treasurer, president, and/or secretary. A sports team may have a goalie, forward, or striker, a book club may have founders and attendees. You're also welcome to filter by something other than role, if it's more relevant to your project.)
-As an administrator, I want to add new users to the club. (User authentication is not required).
-As an administrator, I want to edit user profiles, in case I make a mistake, or need to update their details.
-As an administrator, need the option to delete a user, in case they leave the club or team.
-
-## Specification
-
 ## Setup Instructions
 
-This Inapplication relies on Firebase.  If you would like to clone and replicate this project it requires generating a free api key.
+This application relies on Firebase.  If you would like to clone and replicate this project it requires generating a free api key.
 To do this create a Google account if you don't have one already. Once this is done, you should have access to the Firebase Console located in the top right corner (next to your account images.)
 Navigating to the console, there should be an option, "Add project". Fill out necessary information to create your database.
 Once this is done, you are navigated to a dashboard where you can request an api key. (The options are "Add Firebase to your iOS app", "Add Firebase to your Android app", "Add Firebase to your web app." Click on the right-most one to generate an api key for a web application.)
